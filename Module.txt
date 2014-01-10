@@ -21,3 +21,8 @@ Features:
         Description: Adds the ability to broadcast events about shell changes in a multi-server environment.
 		Category: Hosting
 		Dependencies: Lombiq.Hosting.DistributedEvents
+    Lombiq.Hosting.DistributedEvents.Signals:
+		Name: Hosting - Signals Distributed Events
+        Description: Adds the ability to broadcast signals in a multi-server environment.
+		Category: Hosting
+		Dependencies: Lombiq.Hosting.DistributedEvents
