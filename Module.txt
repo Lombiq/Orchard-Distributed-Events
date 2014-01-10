@@ -1,0 +1,12 @@
+﻿Name: Hosting - Distributed Signals
+AntiForgery: enabled
+Author: Lombiq
+Website: http://lombiq.com
+Version: 1.0
+OrchardVersion: 1.8
+Description: Adds the ability to broadcast signals in a multi-server environment.
+Features:
+    Lombiq.Hosting.DistributedSignals:
+		Name: Hosting - Distributed Signals
+        Description: Adds the ability to broadcast signals in a multi-server environment.
+		Category: Hosting
