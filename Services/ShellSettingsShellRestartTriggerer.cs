@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Orchard.Environment;
-using Orchard.Environment.Configuration;
+﻿using Orchard.Environment.Configuration;
 using Orchard.Environment.Extensions;
-using Orchard.Events;
 
 namespace Lombiq.Hosting.DistributedEvents.Services
 {

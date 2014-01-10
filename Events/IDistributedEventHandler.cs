@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Lombiq.Hosting.DistributedEvents.Models;
+﻿using Lombiq.Hosting.DistributedEvents.Models;
 using Orchard.Events;
 
 namespace Lombiq.Hosting.DistributedEvents.Events

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Web;
+﻿using System.Threading;
 using Orchard;
 
 namespace Lombiq.Hosting.DistributedEvents.Services

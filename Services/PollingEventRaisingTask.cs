@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Lombiq.Hosting.DistributedEvents.Services;
+﻿using Lombiq.Hosting.DistributedEvents.Services;
 using Orchard.Environment.Extensions;
 using Orchard.Tasks;
 

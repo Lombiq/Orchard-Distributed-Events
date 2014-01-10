@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Lombiq.Hosting.DistributedEvents.Events;
 using Lombiq.Hosting.DistributedEvents.Models;
 using Lombiq.Hosting.DistributedSignals.Services;
-using Orchard;
 using Orchard.Data;
 using Orchard.Environment;
-using Orchard.Mvc;
 using Orchard.Services;
 using Orchard.Tasks.Scheduling;
 using Piedone.HelpfulLibraries.Tasks;
