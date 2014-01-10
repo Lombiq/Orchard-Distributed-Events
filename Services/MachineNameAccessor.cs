@@ -16,8 +16,7 @@ namespace Lombiq.Hosting.DistributedSignals.Services
     {
         public string GetMachineName()
         {
-            var name = System.Environment.MachineName;
-            return name;
+            return System.Environment.MachineName;
         }
     }
 }

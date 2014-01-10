@@ -12,7 +12,7 @@ namespace Lombiq.Hosting.DistributedEvents.Services
     [OrchardFeature("Lombiq.Hosting.DistributedEvents.ShellLifetime")]
     public class ShellRestartHandler : IDistributedShellRestartTriggerer, IDistributedEventHandler
     {
-        private const string TenantRestartEventName = "ShellRestart";
+        private const string TenantRestartEventName = "Lombiq.Hosting.ShellRestart";
 
         private readonly IDistributedEventService _eventService;
         private readonly ShellSettings _shellSettings;
