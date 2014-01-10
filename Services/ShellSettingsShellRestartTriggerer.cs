@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Orchard.Environment;
 using Orchard.Environment.Configuration;
 using Orchard.Environment.Extensions;
+using Orchard.Events;
 
-namespace Lombiq.Hosting.DistributedSignals.Services
+namespace Lombiq.Hosting.DistributedEvents.Services
 {
+    // This would work, if it would... See: https://orchard.codeplex.com/workitem/20413
+
     /// <summary>
     /// Triggers a shell restart on all the server nodes if the shell settings change.
     /// </summary>
-    [OrchardFeature("Lombiq.Hosting.DistributedSignals.ShellLifetime")]
+    [OrchardFeature("Lombiq.Hosting.DistributedEvents.ShellLifetime")]
     public class ShellSettingsShellRestartTriggerer : IShellSettingsManagerEventHandler
     {
         private readonly IDistributedShellRestartTriggerer _restartTriggerer;
@@ -20,8 +24,8 @@ namespace Lombiq.Hosting.DistributedSignals.Services
         {
             _restartTriggerer = restartTriggerer;
         }
-        
-		
+
+
         public void Saved(ShellSettings settings)
         {
             _restartTriggerer.TriggerRestart(settings);

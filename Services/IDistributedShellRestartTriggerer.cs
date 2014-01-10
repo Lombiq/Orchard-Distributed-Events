@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Orchard;
 using Orchard.Environment.Configuration;
 
-namespace Lombiq.Hosting.DistributedSignals.Services
+namespace Lombiq.Hosting.DistributedEvents.Services
 {
     /// <summary>
     /// Service for triggering a shell restart on all server nodes.
     /// </summary>
-    public interface IDistributedShellRestartTriggerer
+    public interface IDistributedShellRestartTriggerer : IDependency
     {
         /// <summary>
         /// Invokes a shell restart for a shell on all server nodes.

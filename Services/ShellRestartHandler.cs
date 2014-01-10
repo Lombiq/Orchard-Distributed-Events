@@ -2,29 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Lombiq.Hosting.DistributedSignals.Events;
-using Lombiq.Hosting.DistributedSignals.Models;
+using Lombiq.Hosting.DistributedEvents.Events;
+using Lombiq.Hosting.DistributedEvents.Models;
 using Orchard.Environment.Configuration;
 using Orchard.Environment.Extensions;
 
-namespace Lombiq.Hosting.DistributedSignals.Services
+namespace Lombiq.Hosting.DistributedEvents.Services
 {
-    [OrchardFeature("Lombiq.Hosting.DistributedSignals.ShellLifetime")]
-    public class ShellRestartHandler : IDistributedShellRestartTriggerer, IDistributedSignalEventHandler
+    [OrchardFeature("Lombiq.Hosting.DistributedEvents.ShellLifetime")]
+    public class ShellRestartHandler : IDistributedShellRestartTriggerer, IDistributedEventHandler
     {
-        private const string TenantRestartSignalName = "ShellRestart";
+        private const string TenantRestartEventName = "ShellRestart";
 
-        private readonly IDistributedSignalService _signalService;
+        private readonly IDistributedEventService _eventService;
         private readonly ShellSettings _shellSettings;
         private readonly IShellSettingsManagerEventHandler _shellSettingsEvents;
 
 
         public ShellRestartHandler(
-            IDistributedSignalService signalService,
+            IDistributedEventService eventService,
             ShellSettings shellSettings,
             IShellSettingsManagerEventHandler shellSettingsEvents)
         {
-            _signalService = signalService;
+            _eventService = eventService;
             _shellSettings = shellSettings;
             _shellSettingsEvents = shellSettingsEvents;
         }
@@ -34,18 +34,18 @@ namespace Lombiq.Hosting.DistributedSignals.Services
         {
             var context = string.Empty;
             if (settings != null) context = ShellSettingsSerializer.ComposeSettings(settings);
-            _signalService.Trigger(TenantRestartSignalName, context);
+            _eventService.Trigger(TenantRestartEventName, context);
         }
 
-        void IDistributedSignalEventHandler.Triggered(IDistributedSignal signal)
+        void IDistributedEventHandler.Triggered(IDistributedEvent distributedEvent)
         {
         }
 
-        void IDistributedSignalEventHandler.Raised(IDistributedSignal signal)
+        void IDistributedEventHandler.Raised(IDistributedEvent distributedEvent)
         {
-            if (signal.Name != TenantRestartSignalName) return;
+            if (distributedEvent.Name != TenantRestartEventName) return;
 
-            var shellSettings = !string.IsNullOrEmpty(signal.Context) ? ShellSettingsSerializer.ParseSettings(signal.Context) : _shellSettings;
+            var shellSettings = !string.IsNullOrEmpty(distributedEvent.Context) ? ShellSettingsSerializer.ParseSettings(distributedEvent.Context) : _shellSettings;
             _shellSettingsEvents.Saved(shellSettings);
         }
     }

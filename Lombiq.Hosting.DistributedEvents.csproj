@@ -10,8 +10,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lombiq.Hosting.DistributedSignals</RootNamespace>
-    <AssemblyName>Lombiq.Hosting.DistributedSignals</AssemblyName>
+    <RootNamespace>Lombiq.Hosting.DistributedEvents</RootNamespace>
+    <AssemblyName>Lombiq.Hosting.DistributedEvents</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <FileUpgradeFlags>
@@ -69,7 +69,6 @@
   <ItemGroup>
     <Content Include="Web.config" />
     <Content Include="Scripts\Web.config" />
-    <Content Include="Styles\Web.config" />
     <Content Include="Properties\AssemblyInfo.cs" />
     <Content Include="Module.txt" />
   </ItemGroup>
@@ -82,23 +81,26 @@
       <Project>{9916839C-39FC-4CEB-A5AF-89CA7E87119F}</Project>
       <Name>Orchard.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Piedone.HelpfulLibraries\Piedone.HelpfulLibraries.csproj">
+      <Project>{ea61ad10-39d6-41a9-b12b-227f50c54158}</Project>
+      <Name>Piedone.HelpfulLibraries</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Events\IDistributedSignalEventHandler.cs" />
+    <Compile Include="Events\IDistributedEventHandler.cs" />
     <Compile Include="Migrations\DistributedSignalRecordMigrations.cs" />
-    <Compile Include="Models\DistributedSignalRecord.cs" />
-    <Compile Include="Models\IDistributedSignal.cs" />
-    <Compile Include="Services\DistributedSignalService.cs" />
-    <Compile Include="Services\IDistributedSignalService.cs" />
+    <Compile Include="Models\DistributedEventRecord.cs" />
+    <Compile Include="Models\IDistributedEvent.cs" />
+    <Compile Include="Services\DistributedEventService.cs" />
+    <Compile Include="Services\IDistributedEventService.cs" />
     <Compile Include="Services\IDistributedShellRestartTriggerer.cs" />
+    <Compile Include="Services\MachineNameAccessor.cs" />
+    <Compile Include="Services\PollingEventRaisingTask.cs" />
     <Compile Include="Services\ShellSettingsShellRestartTriggerer.cs" />
     <Compile Include="Services\ShellRestartHandler.cs" />
-    <Compile Include="Services\SignalCursor.cs" />
+    <Compile Include="Services\EventCursor.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

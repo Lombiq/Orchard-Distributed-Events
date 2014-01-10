@@ -5,33 +5,33 @@ using System.Threading;
 using System.Web;
 using Orchard;
 
-namespace Lombiq.Hosting.DistributedSignals.Services
+namespace Lombiq.Hosting.DistributedEvents.Services
 {
     /// <summary>
-    /// Stores where signal processing currently is.
+    /// Stores where event processing currently is.
     /// </summary>
-    public interface ISignalCursor : ISingletonDependency
+    public interface IEventCursor : ISingletonDependency
     {
         /// <summary>
-        /// The ID of the signal that was processed last.
+        /// The ID of the event that was processed last.
         /// </summary>
-        int LastSignalId { get; set; }
+        int LastEventId { get; set; }
     }
 
 
-    public class SignalCursor : ISignalCursor
+    public class EventCursor : IEventCursor
     {
         private ReaderWriterLockSlim _locker = new ReaderWriterLockSlim();
 
-        private int _lastSignalId;
-        public int LastSignalId
+        private int _lastEventId;
+        public int LastEventId
         {
             get
             {
                 try
                 {
                     _locker.EnterReadLock();
-                    return _lastSignalId;
+                    return _lastEventId;
                 }
                 finally
                 {
@@ -44,7 +44,7 @@ namespace Lombiq.Hosting.DistributedSignals.Services
                 try
                 {
                     _locker.EnterWriteLock();
-                    _lastSignalId = value;
+                    _lastEventId = value;
                 }
                 finally
                 {

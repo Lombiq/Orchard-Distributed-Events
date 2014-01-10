@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lombiq.Hosting.DistributedSignals.Models
+namespace Lombiq.Hosting.DistributedEvents.Models
 {
-    public interface IDistributedSignal
+    public interface IDistributedEvent
     {
         string Name { get; }
         string Context { get; }

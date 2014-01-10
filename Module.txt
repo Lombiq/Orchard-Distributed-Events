@@ -1,17 +1,23 @@
-﻿Name: Hosting - Distributed Signals
+﻿Name: Hosting - Distributed Events
 AntiForgery: enabled
 Author: Lombiq
 Website: http://lombiq.com
 Version: 1.0
 OrchardVersion: 1.8
-Description: Adds the ability to broadcast signals in a multi-server environment.
+Description: Adds the ability to broadcast events in a multi-server environment.
 Features:
-    Lombiq.Hosting.DistributedSignals:
-		Name: Hosting - Distributed Signals
-        Description: Adds the ability to broadcast signals in a multi-server environment.
+    Lombiq.Hosting.DistributedEvents:
+		Name: Hosting - Distributed Events
+        Description: Adds the ability to broadcast events in a multi-server environment.
 		Category: Hosting
-    Lombiq.Hosting.DistributedSignals.ShellLifetime:
-		Name: Hosting - Shell Lifetime Distributed Signals
-        Description: Adds the ability to broadcast signals about shell changes in a multi-server environment.
+		Dependencies: Piedone.HelpfulLibraries.Tasks
+    Lombiq.Hosting.DistributedEvents.PollingEventRaising:
+		Name: Hosting - Polling Event Raising for Distributed Events
+        Description: Uses periodic polling to detect and raise new events.
 		Category: Hosting
-		Dependencies: Lombiq.Hosting.DistributedSignals
+		Dependencies: Lombiq.Hosting.DistributedEvents
+    Lombiq.Hosting.DistributedEvents.ShellLifetime:
+		Name: Hosting - Shell Lifetime Distributed Events
+        Description: Adds the ability to broadcast events about shell changes in a multi-server environment.
+		Category: Hosting
+		Dependencies: Lombiq.Hosting.DistributedEvents

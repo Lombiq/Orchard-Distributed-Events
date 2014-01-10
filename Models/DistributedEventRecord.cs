@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using Orchard.Data.Conventions;
 
-namespace Lombiq.Hosting.DistributedSignals.Models
+namespace Lombiq.Hosting.DistributedEvents.Models
 {
-    public class DistributedSignalRecord
+    public class DistributedEventRecord
     {
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }
