@@ -10,3 +10,8 @@ Features:
 		Name: Hosting - Distributed Signals
         Description: Adds the ability to broadcast signals in a multi-server environment.
 		Category: Hosting
+    Lombiq.Hosting.DistributedSignals.ShellLifetime:
+		Name: Hosting - Shell Lifetime Distributed Signals
+        Description: Adds the ability to broadcast signals about shell changes in a multi-server environment.
+		Category: Hosting
+		Dependencies: Lombiq.Hosting.DistributedSignals
