@@ -14,13 +14,4 @@ namespace Lombiq.Hosting.DistributedEvents.Services
         /// <param name="settings">Shell settings of the shell.</param>
         void TriggerRestart(ShellSettings settings);
     }
-
-
-    public static class DistributedTenantRestartTriggererExtensions
-    {
-        public static void TriggerRestart(this IDistributedShellRestartTriggerer triggerer)
-        {
-            triggerer.TriggerRestart(null);
-        }
-    }
 }

@@ -92,6 +92,7 @@
     <Compile Include="Models\IDistributedEvent.cs" />
     <Compile Include="Services\DefaultEnvironmentIdentifierProvider.cs" />
     <Compile Include="Services\DistributedEventService.cs" />
+    <Compile Include="Services\ShellDescriptorShellRestartTriggerer.cs" />
     <Compile Include="Services\DistributedSignals.cs" />
     <Compile Include="Services\IDistributedEventService.cs" />
     <Compile Include="Services\IDistributedShellRestartTriggerer.cs" />

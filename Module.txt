@@ -16,8 +16,8 @@ Features:
         Description: Uses periodic polling to detect and raise new events.
 		Category: Hosting
 		Dependencies: Lombiq.Hosting.DistributedEvents
-    Lombiq.Hosting.DistributedEvents.ShellLifetime:
-		Name: Hosting - Shell Lifetime Distributed Events
+    Lombiq.Hosting.DistributedEvents.Shell:
+		Name: Hosting - Shell Distributed Events
         Description: Adds the ability to broadcast events about shell changes in a multi-server environment.
 		Category: Hosting
 		Dependencies: Lombiq.Hosting.DistributedEvents

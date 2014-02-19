@@ -3,12 +3,12 @@ using Orchard.Environment.Extensions;
 
 namespace Lombiq.Hosting.DistributedEvents.Services
 {
-    // This would work, if it would... See: https://orchard.codeplex.com/workitem/20413
+    // This would work great, if it would always work... See: https://orchard.codeplex.com/workitem/20413
 
     /// <summary>
     /// Triggers a shell restart on all the server nodes if the shell settings change.
     /// </summary>
-    [OrchardFeature("Lombiq.Hosting.DistributedEvents.ShellLifetime")]
+    [OrchardFeature("Lombiq.Hosting.DistributedEvents.Shell")]
     public class ShellSettingsShellRestartTriggerer : IShellSettingsManagerEventHandler
     {
         private readonly IDistributedShellRestartTriggerer _restartTriggerer;
@@ -22,6 +22,13 @@ namespace Lombiq.Hosting.DistributedEvents.Services
 
         public void Saved(ShellSettings settings)
         {
+            // If this Saved() event was raised to restart the shell then let's not raise another restart event.
+            if (settings["IsShellRestart"] == "True")
+            {
+                settings["IsShellRestart"] = "False";
+                return;
+            }
+
             _restartTriggerer.TriggerRestart(settings);
         }
     }
