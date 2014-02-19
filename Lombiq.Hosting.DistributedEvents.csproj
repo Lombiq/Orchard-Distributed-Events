@@ -90,11 +90,12 @@
     <Compile Include="Migrations\DistributedSignalRecordMigrations.cs" />
     <Compile Include="Models\DistributedEventRecord.cs" />
     <Compile Include="Models\IDistributedEvent.cs" />
+    <Compile Include="Services\DefaultEnvironmentIdentifierProvider.cs" />
     <Compile Include="Services\DistributedEventService.cs" />
     <Compile Include="Services\DistributedSignals.cs" />
     <Compile Include="Services\IDistributedEventService.cs" />
     <Compile Include="Services\IDistributedShellRestartTriggerer.cs" />
-    <Compile Include="Services\MachineNameAccessor.cs" />
+    <Compile Include="Services\IEnvironmentIdentifierProvider.cs" />
     <Compile Include="Services\PollingEventRaisingTask.cs" />
     <Compile Include="Services\ShellSettingsShellRestartTriggerer.cs" />
     <Compile Include="Services\ShellRestartHandler.cs" />

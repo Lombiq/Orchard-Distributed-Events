@@ -2,7 +2,7 @@
 using Orchard.Environment.Extensions;
 using Orchard.Tasks;
 
-namespace Lombiq.Hosting.DistributedSignals.Services
+namespace Lombiq.Hosting.DistributedEvents.Services
 {
     [OrchardFeature("Lombiq.Hosting.DistributedEvents.PollingEventRaising")]
     public class PollingEventRaisingTask : IBackgroundTask
