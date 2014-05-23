@@ -14,19 +14,16 @@ namespace Lombiq.Hosting.DistributedEvents.Services
         private readonly IDistributedEventService _eventService;
         private readonly ShellSettings _shellSettings;
         private readonly IShellSettingsManagerEventHandler _shellSettingsEvents;
-        private readonly IOrchardHost _orchardHost;
 
 
         public ShellRestartHandler(
             IDistributedEventService eventService,
             ShellSettings shellSettings,
-            IShellSettingsManagerEventHandler shellSettingsEvents,
-            IOrchardHost orchardHost)
+            IShellSettingsManagerEventHandler shellSettingsEvents)
         {
             _eventService = eventService;
             _shellSettings = shellSettings;
             _shellSettingsEvents = shellSettingsEvents;
-            _orchardHost = orchardHost;
         }
 
 
@@ -46,9 +43,9 @@ namespace Lombiq.Hosting.DistributedEvents.Services
             if (distributedEvent.Name != TenantRestartEventName) return;
 
             var shellSettings = !string.IsNullOrEmpty(distributedEvent.Context) ? ShellSettingsSerializer.ParseSettings(distributedEvent.Context) : _shellSettings;
+
             shellSettings["IsShellRestart"] = "True";
             _shellSettingsEvents.Saved(shellSettings);
-            _orchardHost.EndRequest();
         }
     }
 }
