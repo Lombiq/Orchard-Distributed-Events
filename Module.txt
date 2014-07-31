@@ -15,7 +15,7 @@ Features:
 		Name: Hosting - Polling Event Raising for Distributed Events
         Description: Uses periodic polling to detect and raise new events.
 		Category: Hosting
-		Dependencies: Lombiq.Hosting.DistributedEvents
+		Dependencies: Orchard.Caching, Lombiq.Hosting.DistributedEvents
     Lombiq.Hosting.DistributedEvents.Shell:
 		Name: Hosting - Shell Distributed Events
         Description: Adds the ability to broadcast events about shell changes in a multi-server environment.

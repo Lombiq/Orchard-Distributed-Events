@@ -23,7 +23,7 @@ namespace Lombiq.Hosting.DistributedEvents.Services
             _jsonConverter = jsonConverter;
         }
         
-		
+        
         void ISignals.Trigger<T>(T signal)
         {
             var stringified = Stringify(signal);

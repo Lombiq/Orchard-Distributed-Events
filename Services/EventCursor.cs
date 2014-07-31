@@ -17,34 +17,34 @@ namespace Lombiq.Hosting.DistributedEvents.Services
 
     public class EventCursor : IEventCursor
     {
-        private ReaderWriterLockSlim _locker = new ReaderWriterLockSlim();
+        private ReaderWriterLockSlim _lock = new ReaderWriterLockSlim();
 
         private int _lastEventId;
         public int LastEventId
         {
             get
             {
+                _lock.EnterReadLock();
                 try
                 {
-                    _locker.EnterReadLock();
                     return _lastEventId;
                 }
                 finally
                 {
-                    _locker.ExitReadLock();
+                    _lock.ExitReadLock();
                 }
             }
 
             set
             {
+                _lock.EnterWriteLock();
                 try
                 {
-                    _locker.EnterWriteLock();
                     _lastEventId = value;
                 }
                 finally
                 {
-                    _locker.ExitWriteLock();
+                    _lock.ExitWriteLock();
                 }
             }
         }
