@@ -19,13 +19,13 @@ namespace Lombiq.Hosting.DistributedEvents.Filters
             _eventService = eventService;			
         }
 
+        public void OnResultExecuting(ResultExecutingContext filterContext)
+        {
+        }
+
         public void OnResultExecuted(ResultExecutedContext filterContext)
         {
             _eventService.TryRaise();
-        }
-
-        public void OnResultExecuting(ResultExecutingContext filterContext)
-        {
         }
     }
 }

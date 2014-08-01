@@ -65,8 +65,8 @@ namespace Lombiq.Hosting.DistributedEvents.Services
                 CacheKey,
                 () => _repository.Table
                     .Where(record => record.Id > _eventCursor.LastEventId && record.EnvironmentIdentifier != environmentIdentifier)
-                    .OrderBy(record => record.Id),
-                TimeSpan.FromMinutes(1));
+                    .OrderBy(record => record.Id).ToArray(),
+                TimeSpan.FromSeconds(15));
 
             foreach (var distributedEvent in newEvents)
             {
