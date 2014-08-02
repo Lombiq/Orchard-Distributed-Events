@@ -80,6 +80,10 @@
       <Project>{9916839C-39FC-4CEB-A5AF-89CA7E87119F}</Project>
       <Name>Orchard.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Orchard.Caching\Orchard.Caching.csproj">
+      <Project>{7528bf74-25c7-4abe-883a-443b4eec4776}</Project>
+      <Name>Orchard.Caching</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Piedone.HelpfulLibraries\Piedone.HelpfulLibraries.csproj">
       <Project>{ea61ad10-39d6-41a9-b12b-227f50c54158}</Project>
       <Name>Piedone.HelpfulLibraries</Name>
@@ -87,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Events\IDistributedEventHandler.cs" />
+    <Compile Include="Filters\PollingEventRaisingFilter.cs" />
     <Compile Include="Migrations\DistributedSignalRecordMigrations.cs" />
     <Compile Include="Models\DistributedEventRecord.cs" />
     <Compile Include="Models\IDistributedEvent.cs" />
@@ -97,7 +102,6 @@
     <Compile Include="Services\IDistributedEventService.cs" />
     <Compile Include="Services\IDistributedShellRestartTriggerer.cs" />
     <Compile Include="Services\IEnvironmentIdentifierProvider.cs" />
-    <Compile Include="Services\PollingEventRaisingTask.cs" />
     <Compile Include="Services\ShellSettingsShellRestartTriggerer.cs" />
     <Compile Include="Services\ShellRestartHandler.cs" />
     <Compile Include="Services\EventCursor.cs" />

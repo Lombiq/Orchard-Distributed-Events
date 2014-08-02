@@ -7,22 +7,22 @@ OrchardVersion: 1.8
 Description: Adds the ability to broadcast events in a multi-server environment.
 Features:
     Lombiq.Hosting.DistributedEvents:
-		Name: Hosting - Distributed Events
+        Name: Hosting - Distributed Events
         Description: Adds the ability to broadcast events in a multi-server environment.
-		Category: Hosting
-		Dependencies: Piedone.HelpfulLibraries.Tasks
+        Category: Hosting
+        Dependencies: Orchard.Caching, Piedone.HelpfulLibraries.Tasks
     Lombiq.Hosting.DistributedEvents.PollingEventRaising:
-		Name: Hosting - Polling Event Raising for Distributed Events
+        Name: Hosting - Polling Event Raising for Distributed Events
         Description: Uses periodic polling to detect and raise new events.
-		Category: Hosting
-		Dependencies: Lombiq.Hosting.DistributedEvents
+        Category: Hosting
+        Dependencies: Lombiq.Hosting.DistributedEvents
     Lombiq.Hosting.DistributedEvents.Shell:
-		Name: Hosting - Shell Distributed Events
+        Name: Hosting - Shell Distributed Events
         Description: Adds the ability to broadcast events about shell changes in a multi-server environment.
-		Category: Hosting
-		Dependencies: Lombiq.Hosting.DistributedEvents
+        Category: Hosting
+        Dependencies: Lombiq.Hosting.DistributedEvents
     Lombiq.Hosting.DistributedEvents.Signals:
-		Name: Hosting - Signals Distributed Events
+        Name: Hosting - Signals Distributed Events
         Description: Adds the ability to broadcast signals in a multi-server environment.
-		Category: Hosting
-		Dependencies: Lombiq.Hosting.DistributedEvents
+        Category: Hosting
+        Dependencies: Lombiq.Hosting.DistributedEvents
