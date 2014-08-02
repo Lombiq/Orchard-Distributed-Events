@@ -10,10 +10,10 @@ Features:
         Name: Hosting - Distributed Events
         Description: Adds the ability to broadcast events in a multi-server environment.
         Category: Hosting
-        Dependencies: Orchard.Caching, Piedone.HelpfulLibraries.Tasks
-    Lombiq.Hosting.DistributedEvents.PollingEventRaising:
-        Name: Hosting - Polling Event Raising for Distributed Events
-        Description: Uses periodic polling to detect and raise new events.
+        Dependencies: Piedone.HelpfulLibraries.Tasks
+    Lombiq.Hosting.DistributedEvents.ForegroundPollingEventRaising:
+        Name: Hosting - Foreground Polling Event Raising for Distributed Events
+        Description: Uses periodic polling from requests to detect and raise new events.
         Category: Hosting
         Dependencies: Lombiq.Hosting.DistributedEvents
     Lombiq.Hosting.DistributedEvents.Shell:

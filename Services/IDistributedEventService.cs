@@ -18,8 +18,7 @@ namespace Lombiq.Hosting.DistributedEvents.Services
         /// <summary>
         /// Raises new events that were triggered from other nodes, if there are any.
         /// </summary>
-        /// <param name="force">True to bypass the cache and force reading events from the repository.</param>
-        void TryRaise(bool force = false);
+        void TryRaise();
     }
 
 

@@ -2,30 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Http.Filters;
 using Lombiq.Hosting.DistributedEvents.Services;
 using Orchard.Environment.Extensions;
-using Orchard.Mvc.Filters;
+using Orchard.WebApi.Filters;
 
 namespace Lombiq.Hosting.DistributedEvents.Filters
 {
     [OrchardFeature("Lombiq.Hosting.DistributedEvents.ForegroundPollingEventRaising")]
-    public class PollingEventRaisingFilter : FilterProvider, IResultFilter
+    public class PollingEventRaisingApiFilter : ActionFilterAttribute, IApiFilterProvider
     {
         private readonly IForegroundPolledEventRaiser _polledEventRaiser;
 
 
-        public PollingEventRaisingFilter(IForegroundPolledEventRaiser polledEventRaiser)
+        public PollingEventRaisingApiFilter(IForegroundPolledEventRaiser polledEventRaiser)
         {
             _polledEventRaiser = polledEventRaiser;
         }
 
 
-        public void OnResultExecuting(ResultExecutingContext filterContext)
-        {
-        }
-
-        public void OnResultExecuted(ResultExecutedContext filterContext)
+        public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
         {
             _polledEventRaiser.TryRaise(Constants.TimeSpanBetweenForegroundPolls);
         }

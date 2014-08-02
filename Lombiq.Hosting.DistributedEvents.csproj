@@ -54,6 +54,10 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\aspnetwebapi\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\aspnetmvc\System.Web.Mvc.dll</HintPath>
@@ -80,23 +84,23 @@
       <Project>{9916839C-39FC-4CEB-A5AF-89CA7E87119F}</Project>
       <Name>Orchard.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Orchard.Caching\Orchard.Caching.csproj">
-      <Project>{7528bf74-25c7-4abe-883a-443b4eec4776}</Project>
-      <Name>Orchard.Caching</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Piedone.HelpfulLibraries\Piedone.HelpfulLibraries.csproj">
       <Project>{ea61ad10-39d6-41a9-b12b-227f50c54158}</Project>
       <Name>Piedone.HelpfulLibraries</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Events\IDistributedEventHandler.cs" />
+    <Compile Include="Filters\PollingEventRaisingApiFilter.cs" />
     <Compile Include="Filters\PollingEventRaisingFilter.cs" />
     <Compile Include="Migrations\DistributedSignalRecordMigrations.cs" />
     <Compile Include="Models\DistributedEventRecord.cs" />
     <Compile Include="Models\IDistributedEvent.cs" />
     <Compile Include="Services\DefaultEnvironmentIdentifierProvider.cs" />
     <Compile Include="Services\DistributedEventService.cs" />
+    <Compile Include="Services\ForegroundPolledEventRaiser.cs" />
+    <Compile Include="Services\LastForegroundPollTimeAccessor.cs" />
     <Compile Include="Services\ShellDescriptorShellRestartTriggerer.cs" />
     <Compile Include="Services\DistributedSignals.cs" />
     <Compile Include="Services\IDistributedEventService.cs" />
