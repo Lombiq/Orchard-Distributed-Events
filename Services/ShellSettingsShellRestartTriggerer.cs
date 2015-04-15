@@ -3,7 +3,7 @@ using Orchard.Environment.Extensions;
 
 namespace Lombiq.Hosting.DistributedEvents.Services
 {
-    // This would work great, if it would always work... See: https://orchard.codeplex.com/workitem/20413
+    // This would work great, if it would always work... See: https://github.com/OrchardCMS/Orchard/issues/4242
 
     /// <summary>
     /// Triggers a shell restart on all the server nodes if the shell settings change.
