@@ -1,9 +1,9 @@
-﻿Name: Hosting - Distributed Events
+Name: Hosting - Distributed Events
 AntiForgery: enabled
 Author: Lombiq
 Website: https://orcharddistributedevents.codeplex.com
 Version: 1.0
-OrchardVersion: 1.8
+OrchardVersion: 1.8.2
 Description: Adds the ability to broadcast events in a multi-server environment.
 Features:
     Lombiq.Hosting.DistributedEvents:
