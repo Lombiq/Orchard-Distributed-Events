@@ -3,7 +3,7 @@ AntiForgery: enabled
 Author: Lombiq
 Website: https://github.com/Lombiq/Orchard-Distributed-Events
 Version: 1.0
-OrchardVersion: 1.9.3
+OrchardVersion: 1.10
 Description: Adds the ability to broadcast events in a multi-server environment.
 Features:
     Lombiq.Hosting.DistributedEvents:
