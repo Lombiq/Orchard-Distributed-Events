@@ -4,7 +4,7 @@
 
 ## Project Description
 
-Orchard module that the ability to broadcast events in a multi-server environment.
+Orchard module which broadcasts events in a multi-server environment.
 
 
 ## Features
@@ -12,9 +12,9 @@ Orchard module that the ability to broadcast events in a multi-server environmen
 - Generic services for event propagation in a server farm
 - Shell change propagation (e.g. shell settings, state of enabled features/modules)
 - Signal propagation (i.e. CacheManager changes are replicated)
-- Polling implementation for very generic, reliable event propagation (that, however, can be swapped out with an implementation optimal for a specific environment)
+- Polling implementation for generic, reliable event propagation (that, however, can be swapped out with an implementation optimal for a specific environment)
 
-Distributed Events is part of the [Lombiq Hosting Suite](http://dotnest.com/knowledge-base/topics/lombiq-hosting-suite), a suite of modules making Orchard able to scale better, more fault-tolerant, and have improved maintainability.
+Distributed Events is part of the [Lombiq Hosting Suite](http://dotnest.com/knowledge-base/topics/lombiq-hosting-suite), a suite of modules making Orchard scale better, be more robust, and have improved maintainability.
 
 
 ## Documentation
